@@ -25,6 +25,10 @@ app.get("/public/chat.html", (req, res) => {
   //res.sendFile(__dirname + "/public/chat.html");
   res.redirect('https://deephunt3r.github.io/Chatting-App/public/chat.html')
 });
+app.get("/chat", (req, res) => {
+  //res.sendFile(__dirname + "/public/chat.html");
+  res.redirect('https://deephunt3r.github.io/Chatting-App/public/chat.html')
+});
 
 io.on('connection', socket => {
     socket.on('joinRoom', ({ username, room }) => {

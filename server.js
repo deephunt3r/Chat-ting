@@ -4,6 +4,9 @@ const http = require('http')
 const socketio = require('socket.io')
 const formatMessage = require('./utils/messages')
 const {userJoin, getRoomUsers,getCurrentUser, userLeave} = require('./utils/users')
+var ghpages = require('gh-pages');
+
+ghpages.publish('dist', function(err) {});
 
 const port = 3000 || process.env.PORT
 

@@ -11,7 +11,7 @@
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="css/style.css" />
-		<title>chatting App</title>
+		<title>chat-ting App</title>
 	</head>
 	<body>
 		<div class="join-container">
@@ -19,7 +19,7 @@
 				<h1><i class="fas fa-smile"></i> chatting</h1>
 			</header>
 			<main class="join-main">
-				<form action="login.html">
+				<form action="chat.html">
 					<div class="form-control">
 						<label for="username">Username</label>
 						<input
@@ -41,9 +41,27 @@
 							<option value="Java">Java</option>
 						</select>
 					</div>
+					<!-- <div id="sawo-container" ></div> -->
 					<button type="submit" class="btn">Login</button>
 				</form>
 			</main>
 		</div>
+		<script src="https://websdk.sawolabs.com/sawo.min.js"></script>    
+<script>
+    var config = {
+        
+        containerID: "sawo-container",
+  
+        identifierType: "email",
+ 
+        apiKey: "9f314e49-810b-4fa2-8747-3bb147119b6b",
+
+        onSuccess: (payload) => {
+            window.location = "chat.html"
+        },
+    };
+    var sawo = new Sawo(config);
+    sawo.showForm();
+</script>
 	</body>
 </html>

@@ -17,18 +17,7 @@ const botName = 'chatting bot'
 
 app.use(express.static(path.join(__dirname,'public')));
 
-// app.get("/", (req, res) => {
-//   res.sendFile(__dirname + "/public/login.html");
-// });
 
-app.get("/public/chat.html", (req, res) => {
-  //res.sendFile(__dirname + "/public/chat.html");
-  res.redirect('https://deephunt3r.github.io/Chatting-App/public/chat.html')
-});
-app.get("/chat", (req, res) => {
-  //res.sendFile(__dirname + "/public/chat.html");
-  res.redirect('https://deephunt3r.github.io/Chatting-App/public/chat.html')
-});
 
 io.on('connection', socket => {
     socket.on('joinRoom', ({ username, room }) => {
@@ -57,10 +46,7 @@ io.on('connection', socket => {
         const user = userLeave(socket.id);
     
         if (user) {
-          io.to(user.room).emit(
-            'message',
-            formatMessage(botName, `${user.username} has left the chat`)
-          );
+          io.to(users.room).emit('message',formatMessage(botName, `${user.username} has left the chat`));
 
           io.to(user.room).emit('roomUsers', {
             room: user.room,

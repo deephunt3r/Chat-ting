@@ -9,7 +9,7 @@ const {username,room} = Qs.parse(location.search, {
 
 //console.log(username, room);
 
-const socket = io();
+const socket = io("https://chat-ting.vercel.app/");
 
 
 socket.emit('joinRoom', {username,room})

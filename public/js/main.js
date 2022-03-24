@@ -9,7 +9,7 @@ const {username,room} = Qs.parse(location.search, {
 
 //console.log(username, room);
 
-const socket = io("https://chat-ting.vercel.app/");
+var socket = io.connect("http://chat-ting.vercel.app/");
 
 
 socket.emit('joinRoom', {username,room})
@@ -69,11 +69,3 @@ function outputUsers(users) {
     });
 }
 
-// document.getElementById('leave-btn').addEventListener('click', () => {
-//     const leaveRoom = confirm('Are you sure you want to leave the chatroom?');
-//     if (leaveRoom) {
-//       window.location = './index.html';
-//     } else {
-//     }
-// });
-  

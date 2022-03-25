@@ -1,4 +1,3 @@
-
 const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages')
 const roomName = document.getElementById('room-name');
@@ -10,7 +9,7 @@ const {username,room} = Qs.parse(location.search, {
 
 console.log(username, room);
 
-var socket = io();
+var socket = io('https://chat-ting.herokuapp.com/');
 
 
 socket.emit('joinRoom', {username,room})

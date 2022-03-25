@@ -2,6 +2,7 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
+const cors = require('cors');
 const formatMessage = require('./utils/messages');
 const {
   userJoin,
@@ -15,6 +16,7 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
 
 const botName = 'Chat-ting Bot';
 

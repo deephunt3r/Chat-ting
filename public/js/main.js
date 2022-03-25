@@ -1,3 +1,4 @@
+
 const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages')
 const roomName = document.getElementById('room-name');
@@ -9,7 +10,7 @@ const {username,room} = Qs.parse(location.search, {
 
 //console.log(username, room);
 
-var socket = io.connect("http://chat-ting.vercel.app/");
+var socket = io();
 
 
 socket.emit('joinRoom', {username,room})

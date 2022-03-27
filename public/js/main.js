@@ -7,10 +7,7 @@ const {username,room} = Qs.parse(location.search, {
     ignoreQueryPrefix:true
 })
 
-console.log(username, room);
-
 var socket = io('https://chat-ting.herokuapp.com/');
-
 
 socket.emit('joinRoom', {username,room})
 

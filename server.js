@@ -15,8 +15,16 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/public/login.html");
+});
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get("/user", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
 
 const botName = 'Chat-ting Bot';
 
@@ -64,6 +72,6 @@ io.on('connection', socket => {
   });
 });
 
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));

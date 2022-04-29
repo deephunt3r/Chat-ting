@@ -3,6 +3,7 @@ const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
 const cors = require('cors');
+const dotenv = require('dotenv')
 const formatMessage = require('./utils/messages');
 const {
   userJoin,
@@ -14,6 +15,7 @@ const {
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
+dotenv.config()
 
 app.use(cors());
 

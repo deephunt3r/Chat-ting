@@ -61,4 +61,4 @@ Hurray 🥳, you successfully installed the project in your local machine 🎉.
   <br> <br> 
    <p align="center" width="100%">
    Made with 💖 by Rakesh   
-</p>
+
